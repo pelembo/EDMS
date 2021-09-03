@@ -42,13 +42,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('document_type_id', 'Document Type Id:') !!}</th>
-    <td>{{ $document->document_type_id }}</td>
+    <td>{{ $document->document_type_id->name }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('workgroup_id', 'Workgroup Id:') !!}</th>
-    <td>{{ $document->workgroup_id }}</td>
+    <td>{{ $document->workgroup_id->name }}</td>
 </tr>
 
 

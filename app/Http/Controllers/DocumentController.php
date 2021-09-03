@@ -9,6 +9,8 @@ use App\Http\Requests\UpdateDocumentRequest;
 use App\Models\Document;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Document_Type;
+use App\Models\WorkGroup;
 use Response;
 
 class DocumentController extends AppBaseController
@@ -31,7 +33,9 @@ class DocumentController extends AppBaseController
      */
     public function create()
     {
-        return view('documents.create');
+        $document_types = new Document_Type;
+        $workgroups = new WorkGroup;
+        return view('documents.create', compact('document_types', 'workgroups'));
     }
 
     /**
@@ -92,7 +96,9 @@ class DocumentController extends AppBaseController
             return redirect(route('documents.index'));
         }
 
-        return view('documents.edit')->with('document', $document);
+        $document_types = new Document_Type;
+        $workgroups = new WorkGroup;
+        return view('documents.edit', compact('document_types', 'workgroups'))->with('document', $document);
     }
 
     /**

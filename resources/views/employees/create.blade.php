@@ -18,7 +18,7 @@ Employee @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'employees.store','class' => 'form-horizontal']) !!}
 
-                    @include('employees.fields')
+                    @include('employees.fields', [$states])
 
                 {!! Form::close() !!}
             </div>

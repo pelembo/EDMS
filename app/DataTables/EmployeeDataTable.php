@@ -22,6 +22,12 @@ class EmployeeDataTable extends DataTable
         ->addColumn('status', function($row){
             return get_enum_value('enum_status', $row->status);
         })
+        ->addColumn('gender', function($row){
+            return get_enum_value('enum_gender', $row->gender);
+        })
+        ->addColumn('marital_status', function($row){
+            return get_enum_value('enum_marital_status', $row->marital_status);
+        })
         ->addColumn('action', 'employees.datatables_actions');
     }
 
@@ -69,15 +75,12 @@ class EmployeeDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
             'employee_code',
             'last_name',
             'first_name',
             'middle_name',
             'gender',
             'status',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
         ];
     }
 

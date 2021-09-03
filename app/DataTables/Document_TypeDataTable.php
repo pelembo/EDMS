@@ -69,12 +69,9 @@ class Document_TypeDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
             'name',
             'description',
             'status',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
         ];
     }
 

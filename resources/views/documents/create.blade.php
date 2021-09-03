@@ -18,7 +18,7 @@ Document @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'documents.store', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('documents.fields')
+                    @include('documents.fields', [$document_types, $workgroups])
 
                 {!! Form::close() !!}
             </div>

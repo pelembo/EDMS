@@ -47,7 +47,7 @@
     <div class="row">
         {!! Form::label('document_type_id', 'Document Type Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('document_type_id', ['' => ''], null, ['class' => 'form-control']) !!}
+            {!! Form::select('document_type_id',  modelDropdown($document_types, 'id', 'name'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>
@@ -58,7 +58,7 @@
     <div class="row">
         {!! Form::label('workgroup_id', 'Workgroup Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('workgroup_id', ['' => ''], null, ['class' => 'form-control']) !!}
+            {!! Form::select('workgroup_id',  modelDropdown($workgroups, 'id', 'name'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>

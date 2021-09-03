@@ -47,7 +47,7 @@
     <div class="row">
         {!! Form::label('gender', 'Gender:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('gender', ['' => ''], null, ['class' => 'form-control']) !!}
+            {!! Form::select('gender', enum_gender(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>
@@ -58,7 +58,7 @@
     <div class="row">
         {!! Form::label('birth_date', 'Birth Date:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('birth_date', null, ['class' => 'form-control','id'=>'birth_date']) !!}
+            {!! Form::date('birth_date', null, ['class' => 'form-control','id'=>'birth_date']) !!}
         </div>
     </div>
 </div>
@@ -79,20 +79,27 @@
     <div class="row">
         {!! Form::label('marital_status', 'Marital Status:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('marital_status', ['' => ''], null, ['class' => 'form-control']) !!}
+            {!! Form::select('marital_status', enum_marital_status(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>
 
 
 <!-- State Of Origin Field -->
-<div class="form-group">
+{{-- <div class="form-group">
     <div class="row">
         {!! Form::label('state_of_origin', 'State Of Origin:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('state_of_origin', ['' => ''], null, ['class' => 'form-control']) !!}
         </div>
-    </div>
+    </div> --}}
+    <div class="form-group">
+        <div class="row">
+            {!! Form::label('state_of_origin', 'State Of Origin:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+            <div class="col-md-9 col-lg-9 col-12">
+                {!! Form::select('state_of_origin',  modelDropdown($states, 'id', 'title'), null, ['class' => 'form-control']) !!}
+            </div>
+        </div>
 </>
 
 

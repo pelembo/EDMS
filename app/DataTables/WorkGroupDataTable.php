@@ -69,12 +69,9 @@ class WorkGroupDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
             'name',
             'acronym',
             'status',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
         ];
     }
 

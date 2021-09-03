@@ -3,9 +3,8 @@
         <li><span class="close-icon d-xl-none d-lg-block"><img src="{{asset('img/images/input-disabled.png')}}"
                     alt="image missing"></span></li>
 
-        <a href="{{ URL::to('index') }}" class="logo navbar-brand mr-0">
-            <h1 class="text-center">JOSH</h1>
-        </a>
+            <h1 class="text-center">EDMS</h1>
+
         <li {!! (Request::is('') ? 'class="active"' : '' ) !!}>
             <a href="{{ URL::to('') }}">
                 <span class="mm-text ">Dashboard</span>
@@ -13,7 +12,7 @@
             </a>
         </li>
 
-        <li {!! (Request::is('builder') ? 'class="active"' : '' ) !!}>
+        {{-- <li {!! (Request::is('builder') ? 'class="active"' : '' ) !!}>
             <a href="{{ URL::to('builder') }}">
                 <span class="mm-text ">Crud Builder</span>
                 <span class="menu-icon"><i class="im im-icon-Gift-Box"></i></span>
@@ -161,7 +160,7 @@
                 </li>
             </ul>
         </li>
-
+ --}}
 
 
 

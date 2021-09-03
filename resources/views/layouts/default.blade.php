@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        @section('title')| Josh Admin Template @show
+        @section('title')| Electronic Document Management System @show
     </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 

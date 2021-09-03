@@ -1,10 +1,4 @@
 <tr>
-    <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
-    <td>{{ $employee->id }}</td>
-</tr>
-
-
-<tr>
     <th scopre="row">{!! Form::label('employee_code', 'Employee Code:') !!}</th>
     <td>{{ $employee->employee_code }}</td>
 </tr>
@@ -69,28 +63,5 @@
     <td>{{ get_enum_value('enum_status', $employee->status) }}</td>
 </tr>
 
-
-<tr>
-    <th scopre="row">{!! Form::label('created_by', 'Created By:') !!}</th>
-    <td>{{ $employee->created_by }}</td>
-</tr>
-
-
-<tr>
-    <th scopre="row">{!! Form::label('updated_by', 'Updated By:') !!}</th>
-    <td>{{ $employee->updated_by }}</td>
-</tr>
-
-
-<tr>
-    <th scopre="row">{!! Form::label('created_at', 'Created At:') !!}</th>
-    <td>{{ $employee->created_at }}</td>
-</tr>
-
-
-<tr>
-    <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
-    <td>{{ $employee->updated_at }}</td>
-</tr>
 
 

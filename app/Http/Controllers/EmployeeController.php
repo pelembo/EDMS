@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateEmployeeRequest;
 use App\Models\Employee;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use App\Models\State;
 use Response;
 
 class EmployeeController extends AppBaseController
@@ -31,7 +32,8 @@ class EmployeeController extends AppBaseController
      */
     public function create()
     {
-        return view('employees.create');
+        $states = new State;
+        return view('employees.create', compact('states'));
     }
 
     /**
@@ -92,7 +94,8 @@ class EmployeeController extends AppBaseController
             return redirect(route('employees.index'));
         }
 
-        return view('employees.edit')->with('employee', $employee);
+        $states = new State;
+        return view('employees.edit', compact('states'))->with('employee', $employee);
     }
 
     /**
