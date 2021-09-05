@@ -18,7 +18,7 @@ Document @parent
            <div class="card-body">
                 {!! Form::model($document, ['route' => ['documents.update', $document->id], 'method' => 'patch', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('documents.fields'[$document_types, $workgroups])
+                    @include('documents.fields', [$document_types, $workgroups])
 
                 {!! Form::close() !!}
            </div>
