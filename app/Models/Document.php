@@ -26,7 +26,7 @@ class Document extends Model
     use SoftDeletes;
 
     public $table = 'documents';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -64,7 +64,7 @@ class Document extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
     /**
@@ -86,9 +86,9 @@ class Document extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function documentTypes()
+    public function documentType()
     {
-        return $this->belongsTo(\App\Models\Document_Type::class, 'document_types_id', 'id');
+        return $this->belongsTo(\App\Models\Document_Type::class, 'document_type_id', 'id');
     }
 
     /**

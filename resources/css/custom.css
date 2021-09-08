@@ -228,3 +228,22 @@ body > .header .navbar_fixed_top{
 {
   cursor: pointer;
 }
+/* .home-bg
+{
+    background-color: #339966;
+    background-image: -moz-linear-gradient(40deg, #194d33 0%, #339966 100%) !important;
+    background-image: -webkit-linear-gradient(40deg, #194d33 0%, #339966 100%) !important;
+    background-image: -ms-linear-gradient(40deg, #194d33 0%, #339966 100%) !important;
+    color: #fff !important;
+}
+.home-pattern {
+    background-image: url(../img/home-retirees.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.3;
+    z-index: -1;
+  } */

@@ -24,7 +24,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('gender', 'Gender:') !!}</th>
-    <td>{{ $employee->gender }}</td>
+    <td>{{ get_enum_value('enum_gender', $employee->gender) }}</td>
 </tr>
 
 
@@ -36,7 +36,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('marital_status', 'Marital Status:') !!}</th>
-    <td>{{ $employee->marital_status }}</td>
+    <td>{{ get_enum_value('enum_marital_status', $employee->marital_status) }}</td>
 </tr>
 
 

@@ -2,7 +2,7 @@
 <html lang="en-US">
 
 <head>
-    <title>Josh Login</title>
+    <title>EDMS Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico')}}" />
     <!--page level css -->
@@ -25,7 +25,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h2 class="text-center">
-                                            <span>JOSH</span>
+                                            <span>EDMS</span>
                                         </h2>
                                     </div>
                                 </div>

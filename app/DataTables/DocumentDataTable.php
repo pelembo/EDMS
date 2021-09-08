@@ -18,7 +18,20 @@ class DocumentDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'documents.datatables_actions');
+        return $dataTable
+        ->addColumn('document_type', function($row){
+            if(isset($row->documentType->name)){
+                return $row->documentType->name;
+            }
+            return '';
+        })
+        ->addColumn('workgroup_id', function($row){
+            if(isset($row->workgroup->name)){
+                return $row->workgroup->name;
+            }
+            return '';
+        })
+        ->addColumn('action', 'documents.datatables_actions');
     }
 
     /**
@@ -67,7 +80,7 @@ class DocumentDataTable extends DataTable
         return [
             'document_code',
             'title',
-            'document_type_id',
+            'document_type',
             'workgroup_id',
         ];
     }
