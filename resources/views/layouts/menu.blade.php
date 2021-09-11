@@ -5,13 +5,13 @@
     </a>
 </li>
 
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a href="{{ route('messenger') }}"
         class="text-white nav-link {{ Request::is('messenger*') ? 'active' : '' }}">
         <span class="mr-3"><i class="fa fa-envelope"></i></span>
         <p>Messenger</p>
     </a>
-</li>
+</li> --}}
 
 @role('superadministrator')
 <li class="nav-item">
