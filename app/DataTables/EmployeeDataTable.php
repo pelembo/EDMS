@@ -22,6 +22,9 @@ class EmployeeDataTable extends DataTable
         ->addColumn('status', function ($row){
             return get_enum_value('enum_status', $row->status);
         })
+        ->addColumn('gender', function ($row){
+            return get_enum_value('enum_gender', $row->gender);
+        })
         ->addColumn('action', 'employees.datatables_actions');
     }
 

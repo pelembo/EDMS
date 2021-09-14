@@ -93,10 +93,10 @@ class DocumentDataTable extends DataTable
             'document_type',
             'version',
             'workgroup',
-            'created_at',
-            'created_by',
-            'updated_at',
-            'updated_by',
+            // 'created_at',
+            // 'created_by',
+            // 'updated_at',
+            // 'updated_by',
         ];
     }
 

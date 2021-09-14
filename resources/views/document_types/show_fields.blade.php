@@ -1,8 +1,8 @@
-<!-- Id Field -->
+{{-- <!-- Id Field -->
 <div class="col-sm-12">
     {!! Form::label('id', 'Id:') !!}
     <p>{{ $documentType->id }}</p>
-</div>
+</div> --}}
 
 <!-- Name Field -->
 <div class="col-sm-12">
@@ -19,9 +19,9 @@
 <!-- Status Field -->
 <div class="col-sm-12">
     {!! Form::label('status', 'Status:') !!}
-    <p>{{ $documentType->status }}</p>
+    <p>{{ get_enum_value('enum_status', $documentType->status) }}</p>
 </div>
-
+{{--
 <!-- Created By Field -->
 <div class="col-sm-12">
     {!! Form::label('created_by', 'Created By:') !!}
@@ -44,5 +44,5 @@
 <div class="col-sm-12">
     {!! Form::label('updated_at', 'Updated At:') !!}
     <p>{{ $documentType->updated_at }}</p>
-</div>
+</div> --}}
 

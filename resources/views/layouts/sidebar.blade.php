@@ -1,10 +1,20 @@
 <style>
     .custom-sidebar-bg {
-        background-color: #232820;
+        background-color: rgba(240, 242, 247, 0.25);
+    background-image: -moz-linear-gradient(40deg,
+        #194d33 0%,
+        #339966 100%) !important;
+    background-image: -webkit-linear-gradient(40deg,
+        #194d33 0%,
+        #339966 100%) !important;
+    background-image: -ms-linear-gradient(40deg,
+        #194d33 0%,
+        #339966 100%) !important;
     }
 
     .nav-sidebar>.nav-item>.nav-link.active {
-        background-color: #eb212d !important;
+        /* background-color: #eb212d !important; */
+        background-color: #194d33 !important;
     }
 
 
@@ -17,7 +27,7 @@
     <a href="{{ route('home') }}" class="brand-link">
         <img src="{{ asset('images/logo.png') }}" alt="{{ config('app.name') }} Logo"
             class="brand-image img-circle elevation-3">
-        <span class="brand-text font-weight-light"><strong>OMZ</strong><span>
+        <span class="brand-text font-weight-light"><strong>EDMS</strong><span>
     </a>
 
     <div class="sidebar">

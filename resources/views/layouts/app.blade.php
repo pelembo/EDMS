@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>{{ config('app.name') }}</title>
+    <title>Electronic Document Management System</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" />
     <!-- Font Awesome -->
@@ -39,8 +39,18 @@
 
     <style>
         .btn-primary {
-            background-color: #f9af48 !important;
-            border-color: #f9af48 !important;
+            background-color: #339966 ;
+            border-color: #194d33 !important;
+        }
+        .btn-primary:hover{
+            color: #fff;
+            background-color: #194d33
+        }
+        .page-item.active .page-link {
+            z-index: 3;
+            color: #fff;
+            background-color: #339966 ;
+            border-color: #194d33 !important;
         }
 
     </style>
@@ -108,8 +118,8 @@
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 1.0.0
             </div>
-            <strong>Copyright &copy; <span id="currentYear"></span> <a href="#"><span style="color: #e5101b">Omz</span>
-                    <span style="color: #F9AF48">Admin</span></a>.</strong> All rights
+            <strong>Copyright &copy; <span id="currentYear"></span> <a href="#"><span style="color: #339966">EDMS</span>
+                    </a>.</strong> All rights
             reserved.
         </footer>
     </div>

@@ -28,7 +28,7 @@
     <p>{{ $document->file_upload }}</p>
 </div> --}}
 
-<!-- Created By Field -->
+{{-- <!-- Created By Field -->
 <div class="col-sm-12">
     {!! Form::label('created_by', 'Created By:') !!}
     <p>{{ $document->createdBy->name }}</p>
@@ -42,7 +42,7 @@
     @else
     <p></p>
     @endif
-</div>
+</div> --}}
 
 <!-- Document Type Id Field -->
 <div class="col-sm-12">
@@ -56,7 +56,7 @@
     <p>{{ $document->workgroup->name }}</p>
 </div>
 
-<!-- Created At Field -->
+{{-- <!-- Created At Field -->
 <div class="col-sm-12">
     {!! Form::label('created_at', 'Created At:') !!}
     <p>{{ $document->created_at }}</p>
@@ -66,5 +66,5 @@
 <div class="col-sm-12">
     {!! Form::label('updated_at', 'Updated At:') !!}
     <p>{{ $document->updated_at }}</p>
-</div>
+</div> --}}
 

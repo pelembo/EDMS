@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ config('app.name') }}</title>
+    <title>Electronic Document Management System </title>
     <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" />
 
     <!-- Tell the browser to be responsive to screen width -->
@@ -32,18 +32,18 @@
     <![endif]-->
 
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-image: url(../img/pexels-pixabay-373543.jpg);">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
+        <a href="{{ url('/home') }}"><b style="color: #fff ">EDMS</b></a>
     </div>
 
     <!-- /.login-logo -->
 
     <!-- /.login-box-body -->
     <div class="card">
-        <div class="card-body login-card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+        <div class="card-body login-card-body ">
+            <p class="login-box-msg">Sign in </p>
 
             <form method="post" action="{{ url('/login') }}">
                 @csrf
@@ -87,7 +87,7 @@
                     </div>
 
                     <div class="col-4">
-                        <button type="submit" class="btn btn-block text-white" style="background-color: #F9AF48">Sign In</button>
+                        <button type="submit" class="btn btn-success " >Sign In</button>
                     </div>
 
                 </div>

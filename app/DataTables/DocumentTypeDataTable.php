@@ -18,7 +18,11 @@ class DocumentTypeDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'document_types.datatables_actions');
+        return $dataTable
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('action', 'document_types.datatables_actions');
     }
 
     /**
@@ -69,7 +73,7 @@ class DocumentTypeDataTable extends DataTable
             // 'id',
             'name',
             'description',
-            // 'status',
+             'status',
             // 'created_at' => ['searchable' => false],
             // 'updated_at' => ['searchable' => false]
         ];
