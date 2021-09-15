@@ -54,7 +54,7 @@
                            <p class="font-weight-bold text-center text-md-left" >EDMS Central Core V1</p>
                         </div>
                         <div class="pr-3 pl-3 pb-2">
-                                <p class="home-features text-center text-md-left">   Scanning  &middot; OCR   &middot;  Retention  &middot;  Registrations     &middot;   Verifications  </p>
+                                <p class="home-features text-center text-md-left">   Document Retrieval  &middot; Storage   &middot;  Retention  &middot;  Registrations   &middot;  Verifications  </p>
                         </div>
                         <div class="pr-3 pl-3 pb-2 text-center text-md-left">
                            <a href="{{ route('home') }}">

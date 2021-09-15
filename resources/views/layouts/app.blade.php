@@ -39,12 +39,12 @@
 
     <style>
         .btn-primary {
-            background-color: #339966 ;
+            background-color: #339966 !important ;
             border-color: #194d33 !important;
         }
         .btn-primary:hover{
             color: #fff;
-            background-color: #194d33
+            background-color: #194d33 !important
         }
         .page-item.active .page-link {
             z-index: 3;

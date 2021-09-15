@@ -809,7 +809,7 @@
       margin-left: 250px !important;
     }
     .home-pattern {
-      background-image: url(../images/pexels-lukas.jpg);
+      background-image: url(../img/pexels-pixabay-373543.jpg) !important;
       background-size: cover;
       position: absolute;
       top: 0px;
@@ -831,7 +831,12 @@
     opacity: 0.6;
     z-index: 1;
   }
+
   .login-back{
       background-image: url(../img/pexels-pixabay-373543.jpg);
+      background-size: cover;
+
+
+
   }
 

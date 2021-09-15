@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/icheck-bootstrap/3.0.1/icheck-bootstrap.min.css"
           integrity="sha512-8vq2g5nHE062j3xor4XxPeZiPjmRDh6wlufQlfC6pdQ/9urJkU07NM0tEREeymP++NczacJ/Q59ul+/K2eYvcg=="
           crossorigin="anonymous"/>
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/custom2.css')}}">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -32,10 +32,10 @@
     <![endif]-->
 
 </head>
-<body class="hold-transition login-page" style="background-image: url(../img/pexels-pixabay-373543.jpg);">
-<div class="login-box">
+<body class="hold-transition login-page login-back">
+<div class="login-box ">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><b style="color: #fff ">EDMS</b></a>
+        <a href="{{ url('/home') }}"><b>EDMS</b></a>
     </div>
 
     <!-- /.login-logo -->
