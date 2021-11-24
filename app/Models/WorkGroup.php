@@ -25,7 +25,7 @@ class WorkGroup extends Model
     use HasFactory;
 
     public $table = 'work_groups';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -59,7 +59,7 @@ class WorkGroup extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
     /**

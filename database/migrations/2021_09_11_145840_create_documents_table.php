@@ -20,7 +20,8 @@ class CreateDocumentsTable extends Migration
             $table->integer('version')->nullable()->unsigned()->default(1);
             $table->string('title');
             $table->string('description');
-            $table->string('file_upload')->nullable();
+            $table->json('file_upload')->nullable();
+            $table->json('file_url')->nullable();
             $table->integer('created_by')->nullable()->unsigned();
             $table->integer('updated_by')->nullable()->unsigned();
             $table->integer('document_type_id')->unsigned();

@@ -25,17 +25,17 @@ class DocumentDataTable extends DataTable
         ->addColumn('workgroup', function($row){
             return $row->workgroup->name;
         })
-        ->addColumn('created_by', function($row){
-            return $row->createdBy->name;
-        })
+        // ->addColumn('created_by', function($row){
+        //     return $row->createdBy->name;
+        // })
         ->addColumn('created_at', function($row){
             return $row->created_at->toString();
         })
-        ->addColumn('updated_by', function($row){
-            if(isset($row->updatedBy->name)){
-                return $row->updatedBy->name;
-            }
-        })
+        // ->addColumn('updated_by', function($row){
+        //     if(isset($row->updatedBy->name)){
+        //         return $row->updatedBy->name;
+        //     }
+        // })
         ->addColumn('updated_at', function($row){
             return $row->updated_at->toString();
         })

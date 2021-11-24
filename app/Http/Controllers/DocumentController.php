@@ -13,9 +13,14 @@ use App\Repositories\DocumentRepository;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateDocumentRequest;
 use App\Http\Requests\UpdateDocumentRequest;
+use App\Models\Document;
+use App\Models\Employee;
+use App\Traits\FileUpload;
+use Illuminate\Support\Facades\Storage;
 
 class DocumentController extends AppBaseController
 {
+    use FileUpload;
     /** @var  DocumentRepository */
     private $documentRepository;
 
@@ -32,6 +37,15 @@ class DocumentController extends AppBaseController
      */
     public function index(DocumentDataTable $documentDataTable)
     {
+        // if(auth()->user()->hasRole('superadministrator'))
+        // {
+
+        // }
+        // else
+        // {
+        //     $workgroups = auth()->user()->workgroup_id;
+        //     $docs = Document::where('workgroup_id', $workgroups)->where('user_id','!=',auth()->user()->id)->get();
+        // }
         return $documentDataTable->render('documents.index');
     }
 
@@ -57,10 +71,11 @@ class DocumentController extends AppBaseController
     public function store(CreateDocumentRequest $request)
     {
         $input = $request->all();
+        // $document = $this->documentRepository->create($input);
+        $document = Document::create($this->saveFile($input));
 
-        $document = $this->documentRepository->create($input);
         $document->created_by = Auth::user()->id;
-        $document->save();
+       // $document->save();
 
         Flash::success('Document saved successfully.');
         create_activity('create', 'Document');
@@ -128,10 +143,18 @@ class DocumentController extends AppBaseController
             return redirect(route('documents.index'));
         }
 
-        $document = $this->documentRepository->update($request->all(), $id);
-        $document->updated_by = Auth::user()->id;
-        $document->version = $document->version + 1;
+        $input = $request->all();
+
+        $file_url = str_replace('storage/', 'public/', $document->file_url);
+        Storage::delete($file_url);
+
+        $document->fill($this->saveFile($input));
         $document->save();
+
+        // $document = $this->documentRepository->update($request->all(), $id);
+        // $document->updated_by = Auth::user()->id;
+        // $document->version = $document->version + 1;
+        // $document->save();
 
         Flash::success('Document updated successfully.');
         create_activity('update', 'Document');
@@ -162,5 +185,33 @@ class DocumentController extends AppBaseController
         create_activity('delete', 'Document');
 
         return redirect(route('documents.index'));
+    }
+
+    public function saveFile($input)
+    {
+
+        $files = $input['file_upload'];
+        $workgroup_id = $input['workgroup_id'];
+        $document_type_id = $input['document_type_id'];
+
+
+        $file_url_array = [];
+
+        $group = WorkGroup::find($workgroup_id);
+        $type = DocumentType::find($document_type_id);
+
+
+        $file_name = $group->acronym .  '_' . $type->name . '_' . now()->timestamp;
+
+
+        $input['file_name'] = $file_name;
+
+        foreach ($files as $file) {
+            $file_url_array[] = $this->Upload($file, $file_name, $group->acronym, $type->name);
+        }
+
+        $input['file_url'] = $file_url_array;
+
+        return $input;
     }
 }

@@ -55,19 +55,19 @@ Route::resource('roles-assignment', App\Http\Controllers\RolesAssignmentControll
     ->only(['index', 'edit', 'update'])->middleware('auth');
 
 
-Route::resource('activityLogs', App\Http\Controllers\ActivityLogController::class);
+Route::resource('activityLogs', App\Http\Controllers\ActivityLogController::class)->middleware('auth');
 
 
-Route::resource('documents', App\Http\Controllers\DocumentController::class);
+Route::resource('documents', App\Http\Controllers\DocumentController::class)->middleware('auth');
 
 
-Route::resource('documentTypes', App\Http\Controllers\DocumentTypeController::class);
+Route::resource('documentTypes', App\Http\Controllers\DocumentTypeController::class)->middleware('auth');
 
 
-Route::resource('employees', App\Http\Controllers\EmployeeController::class);
+Route::resource('employees', App\Http\Controllers\EmployeeController::class)->middleware('auth');
 
 
-Route::resource('states', App\Http\Controllers\StateController::class);
+Route::resource('states', App\Http\Controllers\StateController::class)->middleware('auth');
 
 
-Route::resource('workGroups', App\Http\Controllers\WorkGroupController::class);
+Route::resource('workGroups', App\Http\Controllers\WorkGroupController::class)->middleware('auth');

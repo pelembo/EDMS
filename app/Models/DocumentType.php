@@ -24,7 +24,7 @@ class DocumentType extends Model
     use HasFactory;
 
     public $table = 'document_types';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -56,7 +56,7 @@ class DocumentType extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
     /**

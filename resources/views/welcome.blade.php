@@ -64,7 +64,7 @@
                         <div>
                             <br>
                         </div>
-                        <p class="subtitle pt-5 text-center text-md-left pr-3 pl-3 pb-2 "><strong>Copyright &copy; <?php echo date("Y"); ?>. EDMS. All Rights Reserved.</strong></p>
+                        <p class="subtitle pt-5 text-center text-md-left pr-3 pl-3 pb-2 "><strong>Copyright &copy; <?php echo date("Y"); ?>. Pyrich Group Limited. All Rights Reserved.</strong></p>
 
                     </div>
 

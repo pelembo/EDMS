@@ -35,7 +35,7 @@
 <body class="hold-transition login-page login-back">
 <div class="login-box ">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>EDMS</b></a>
+        <a href="{{ url('/home') }}"><b style="color: white ">EDMS</b></a>
     </div>
 
     <!-- /.login-logo -->
@@ -97,7 +97,7 @@
                 <a href="{{ route('password.request') }}" style="color: #e5101b">I forgot my password</a>
             </p>
             <p class="mb-0">
-                <a href="{{ route('register') }}" class="text-center" style="color: #F9AF48">Register a new membership</a>
+                <a href="{{ route('register') }}" class="text-center" style="color: #079113">Register a new membership</a>
             </p>
         </div>
         <!-- /.login-card-body -->

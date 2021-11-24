@@ -29,7 +29,7 @@ class Document extends Model
     use HasFactory;
 
     public $table = 'documents';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -40,6 +40,7 @@ class Document extends Model
         'title',
         'description',
         'file_upload',
+        'file_url',
         'document_type_id',
         'workgroup_id'
     ];
@@ -54,7 +55,8 @@ class Document extends Model
         'document_code' => 'string',
         'title' => 'string',
         'description' => 'string',
-        'file_upload' => 'string',
+        'file_upload' => 'array',
+        'file_url' => 'array',
         'created_by' => 'integer',
         'updated_by' => 'integer',
         'document_type_id' => 'integer',

@@ -17,13 +17,11 @@ class CreateStatesTable extends Migration
         Schema::create('states', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->integer('status');
+            $table->integer('status')->default(2);
             $table->integer('created_by')->nullable()->unsigned();
             $table->integer('updated_by')->nullable()->unsigned();
             $table->timestamps();
             $table->softDeletes();
-            // $table->foreign('created_by')->references('id')->on('users');
-            // $table->foreign('updated_by')->references('id')->on('users');
         });
     }
 

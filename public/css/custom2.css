@@ -808,7 +808,7 @@
     .main-footer {
       margin-left: 250px !important;
     }
-    .home-pattern {
+    /* .home-pattern {
       background-image: url(../img/pexels-pixabay-373543.jpg) !important;
       background-size: cover;
       position: absolute;
@@ -818,7 +818,7 @@
       left: 0px;
       opacity: 0.3;
       z-index: -1;
-  }
+  } */
   }
   .home-welcome{
     background-image: url(../img/pexels-lukas.jpg);
@@ -833,10 +833,7 @@
   }
 
   .login-back{
-      background-image: url(../img/pexels-pixabay-373543.jpg);
+      /* background-image: url(../img/pexels-pixabay-373543.jpg); */
+      background-color: #194d33;
       background-size: cover;
-
-
-
   }
-

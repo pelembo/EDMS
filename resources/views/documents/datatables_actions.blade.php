@@ -1,6 +1,9 @@
 {!! Form::open(['route' => ['documents.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
-    <a href="{{ route('documents.show', $id) }}" class='btn btn-default btn-xs'>
+    {{-- <a href="{{ route('documents.show', $id) }}" class='btn btn-default btn-xs'>
+        <i class="far fa-eye"></i>
+    </a> --}}
+    <a href="{{ $file_url[0] }}" target="_blank" class='btn btn-default btn-xs'>
         <i class="far fa-eye"></i>
     </a>
     <a href="{{ route('documents.edit', $id) }}" class='btn btn-default btn-xs'>

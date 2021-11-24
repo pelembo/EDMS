@@ -22,6 +22,7 @@ class DocumentRepository extends BaseRepository
         'title',
         'description',
         'file_upload',
+        'file_url',
         'document_type_id',
         'workgroup_id'
     ];
