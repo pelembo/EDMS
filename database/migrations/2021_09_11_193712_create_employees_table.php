@@ -26,9 +26,11 @@ class CreateEmployeesTable extends Migration
             $table->integer('state_of_origin')->unsigned();
             $table->string('email');
             $table->string('phone_number');
+            $table->integer('workgroup_id')->unsigned();
             $table->integer('status');
             $table->integer('created_by')->nullable()->unsigned();
             $table->integer('updated_by')->nullable()->unsigned();
+            $table->integer('user_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
             // $table->foreign('state_of_origin')->references('id')->on('states');

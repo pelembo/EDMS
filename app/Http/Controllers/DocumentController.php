@@ -16,6 +16,7 @@ use App\Http\Requests\UpdateDocumentRequest;
 use App\Models\Document;
 use App\Models\Employee;
 use App\Traits\FileUpload;
+use DateTime;
 use Illuminate\Support\Facades\Storage;
 
 class DocumentController extends AppBaseController
@@ -71,11 +72,25 @@ class DocumentController extends AppBaseController
     public function store(CreateDocumentRequest $request)
     {
         $input = $request->all();
-        // $document = $this->documentRepository->create($input);
-        $document = Document::create($this->saveFile($input));
+        $document = $this->documentRepository->create($this->saveFile($input));
+
+        $workgroup_id = $input['workgroup_id'];
+        $document_type_id = $input['document_type_id'];
+
+        $group = WorkGroup::find($workgroup_id);
+        $type = DocumentType::find($document_type_id);
+
+        $date = new DateTime();
+       // $date = date('YmdHis');
+
+        $file_name = $group->acronym .  '/' . $type->name . '/' . $date->format('Ymd/His');
+
+        $document['document_code'] = $file_name;
+
+        //$document = Document::create($this->saveFile($input));
 
         $document->created_by = Auth::user()->id;
-       // $document->save();
+        $document->save();
 
         Flash::success('Document saved successfully.');
         create_activity('create', 'Document');
@@ -148,7 +163,9 @@ class DocumentController extends AppBaseController
         $file_url = str_replace('storage/', 'public/', $document->file_url);
         Storage::delete($file_url);
 
-        $document->fill($this->saveFile($input));
+        $document->fill($this->saveFile($this->saveFile($input)));
+        $document->updated_by = Auth::user()->id;
+
         $document->save();
 
         // $document = $this->documentRepository->update($request->all(), $id);

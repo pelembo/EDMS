@@ -71,6 +71,12 @@
     {!! Form::number('phone_number', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Workgroup Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('workgroup_id', 'Workgroup:') !!}
+    {!! Form::select('workgroup_id', modelDropdown($workgroups), null, ['class' => 'form-control custom-select']) !!}
+</div>
+
 <!-- Status Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('status', 'Status:') !!}

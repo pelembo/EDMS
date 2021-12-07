@@ -25,6 +25,9 @@ class EmployeeDataTable extends DataTable
         ->addColumn('gender', function ($row){
             return get_enum_value('enum_gender', $row->gender);
         })
+        ->addColumn('workgroup', function($row){
+            return $row->workgroup->name;
+        })
         ->addColumn('action', 'employees.datatables_actions');
     }
 
@@ -79,6 +82,7 @@ class EmployeeDataTable extends DataTable
             'first_name',
             'middle_name',
             'gender',
+            'workgroup',
             'status',
             // 'created_at' => ['searchable' => false],
             // 'updated_at' => ['searchable' => false]

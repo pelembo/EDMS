@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateDocumentTypeRequest;
 use App\Repositories\DocumentTypeRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use Illuminate\Support\Facades\Auth;
 use Response;
 
 class DocumentTypeController extends AppBaseController
@@ -54,6 +55,9 @@ class DocumentTypeController extends AppBaseController
         $input = $request->all();
 
         $documentType = $this->documentTypeRepository->create($input);
+        $documentType->created_by = Auth::user()->id;
+        $documentType->save();
+
 
         Flash::success('Document Type saved successfully.');
         create_activity('create', 'Document Type');
@@ -120,6 +124,10 @@ class DocumentTypeController extends AppBaseController
         }
 
         $documentType = $this->documentTypeRepository->update($request->all(), $id);
+        $documentType->updated_by = Auth::user()->id;
+        $documentType->save();
+
+
 
         Flash::success('Document Type updated successfully.');
         create_activity('update', 'Document Type');

@@ -64,6 +64,12 @@
     <p>{{ $employee->phone_number }}</p>
 </div>
 
+<!-- Workgroup Id Field -->
+<div class="col-sm-12">
+    {!! Form::label('workgroup_id', 'Workgroup:') !!}
+    <p>{{ $employee->workgroup->name }}</p>
+</div>
+
 <!-- Status Field -->
 <div class="col-sm-12">
     {!! Form::label('status', 'Status:') !!}

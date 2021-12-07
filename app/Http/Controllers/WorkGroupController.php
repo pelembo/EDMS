@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateWorkGroupRequest;
 use App\Repositories\WorkGroupRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use Illuminate\Support\Facades\Auth;
 use Response;
 
 class WorkGroupController extends AppBaseController
@@ -54,6 +55,9 @@ class WorkGroupController extends AppBaseController
         $input = $request->all();
 
         $workGroup = $this->workGroupRepository->create($input);
+        $workGroup->created_by = Auth::user()->id;
+
+        $workGroup->save();
 
         Flash::success('Work Group saved successfully.');
         create_activity('create', 'Work Group');
@@ -120,6 +124,9 @@ class WorkGroupController extends AppBaseController
         }
 
         $workGroup = $this->workGroupRepository->update($request->all(), $id);
+        $workGroup->updated_by = Auth::user()->id;
+        $workGroup->save();
+
 
         Flash::success('Work Group updated successfully.');
         create_activity('update', 'Work Group');

@@ -11,15 +11,21 @@ use App\Repositories\EmployeeRepository;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
+use App\Models\WorkGroup;
+use App\Repositories\UserRepository;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class EmployeeController extends AppBaseController
 {
     /** @var  EmployeeRepository */
     private $employeeRepository;
+    private $userRepository;
 
-    public function __construct(EmployeeRepository $employeeRepo)
+    public function __construct(EmployeeRepository $employeeRepo, UserRepository $userRepo)
     {
         $this->employeeRepository = $employeeRepo;
+        $this->userRepository = $userRepo;
     }
 
     /**
@@ -41,7 +47,9 @@ class EmployeeController extends AppBaseController
     public function create()
     {
         $states = new State;
-        return view('employees.create', compact('states'));
+        $workgroups = new WorkGroup;
+
+        return view('employees.create', compact('states','workgroups'));
     }
 
     /**
@@ -54,8 +62,24 @@ class EmployeeController extends AppBaseController
     public function store(CreateEmployeeRequest $request)
     {
         $input = $request->all();
+        // dd($input);
 
         $employee = $this->employeeRepository->create($input);
+        $user_data['name'] = $employee->last_name . " " . $employee->first_name . " " . $employee->middle_name;
+        $user_data['email'] = $employee->email;
+        $user_data['password'] = Hash::make('password');
+
+        $user = $this->userRepository->create($user_data);
+
+        $employee->user_id = $user->id;
+        $employee->created_by = Auth::user()->id;
+
+
+
+        $employee->save();
+
+
+
 
         Flash::success('Employee saved successfully.');
         create_activity('create', 'Employee');
@@ -100,7 +124,8 @@ class EmployeeController extends AppBaseController
             return redirect(route('employees.index'));
         }
         $states = new State;
-        return view('employees.edit',compact('states'))->with('employee', $employee);
+        $workgroups = new WorkGroup;
+        return view('employees.edit',compact('states', 'workgroups'))->with('employee', $employee);
     }
 
     /**
@@ -122,6 +147,16 @@ class EmployeeController extends AppBaseController
         }
 
         $employee = $this->employeeRepository->update($request->all(), $id);
+
+        $user_data['name'] = $employee->last_name . " " . $employee->first_name . " " . $employee->middle_name;
+        $user_data['email'] = $employee->email;
+        $user_data['password'] = Hash::make('password');
+
+        $user = $this->userRepository->update($user_data, $employee->user_id);
+
+        $employee->updated_by = Auth::user()->id;
+        $employee->save();
+
 
         Flash::success('Employee updated successfully.');
         create_activity('update', 'Employee');

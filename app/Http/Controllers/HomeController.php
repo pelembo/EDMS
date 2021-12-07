@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Document;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $employee = Employee::all();
+        $employee_active = $employee->where('status', '=', 1)->count();
+        $employee_inactive = $employee->where('status', '=', 0)->count();
+
+        $document = Document::all();
+        $document_active = $document->count();
+
+        return view('home', compact(
+            'employee_active',
+            'employee_inactive',
+            'document_active',
+        ));
     }
+
 }

@@ -1,8 +1,3 @@
-<!-- Document Code Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('document_code', 'Document Code:') !!}
-    {!! Form::text('document_code', null, ['class' => 'form-control']) !!}
-</div>
 
 <!-- Title Field -->
 <div class="form-group col-sm-6">
@@ -37,7 +32,7 @@
 
 
 <!-- Workgroup Id Field -->
-<div class="form-group col-sm-6 col-lg-12">
+<div class="form-group col-sm-6">
     {!! Form::label('workgroup_id', 'Workgroup:') !!}
     {!! Form::select('workgroup_id', modelDropdown($workgroups), null, ['class' => 'form-control custom-select']) !!}
 </div>

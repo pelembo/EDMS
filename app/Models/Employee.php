@@ -33,7 +33,7 @@ class Employee extends Model
     use HasFactory;
 
     public $table = 'employees';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -50,6 +50,7 @@ class Employee extends Model
         'state_of_origin',
         'email',
         'phone_number',
+        'workgroup_id',
         'status'
     ];
 
@@ -70,6 +71,7 @@ class Employee extends Model
         'state_of_origin' => 'integer',
         'email' => 'string',
         'phone_number' => 'string',
+        'workgroup_id' => 'integer',
         'status' => 'integer',
         'created_by' => 'integer',
         'updated_by' => 'integer'
@@ -81,7 +83,7 @@ class Employee extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
     /**
@@ -106,5 +108,9 @@ class Employee extends Model
     public function updatedBy()
     {
         return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
+    }
+    public function workgroup()
+    {
+        return $this->belongsTo(\App\Models\WorkGroup::class, 'workgroup_id', 'id');
     }
 }

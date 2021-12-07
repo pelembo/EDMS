@@ -31,11 +31,7 @@ class DocumentDataTable extends DataTable
         ->addColumn('created_at', function($row){
             return $row->created_at->toString();
         })
-        // ->addColumn('updated_by', function($row){
-        //     if(isset($row->updatedBy->name)){
-        //         return $row->updatedBy->name;
-        //     }
-        // })
+        
         ->addColumn('updated_at', function($row){
             return $row->updated_at->toString();
         })
