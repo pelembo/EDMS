@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Document;
 use App\Models\Employee;
+use App\Models\WorkGroup;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,6 +30,10 @@ class HomeController extends Controller
         $employee_active = $employee->where('status', '=', 1)->count();
         $employee_inactive = $employee->where('status', '=', 0)->count();
 
+        $workgroup = WorkGroup::all();
+        $workgroup_active = $workgroup->where('status', '=', 1)->count();
+        $workgroup_inactive = $workgroup->where('status', '=', 0)->count();
+
         $document = Document::all();
         $document_active = $document->count();
 
@@ -36,6 +41,8 @@ class HomeController extends Controller
             'employee_active',
             'employee_inactive',
             'document_active',
+            'workgroup_active',
+            'workgroup_inactive',
         ));
     }
 

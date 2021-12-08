@@ -65,6 +65,8 @@ class EmployeeController extends AppBaseController
         // dd($input);
 
         $employee = $this->employeeRepository->create($input);
+        $employee['employee_code'] = now()->timestamp;
+
         $user_data['name'] = $employee->last_name . " " . $employee->first_name . " " . $employee->middle_name;
         $user_data['email'] = $employee->email;
         $user_data['password'] = Hash::make('password');

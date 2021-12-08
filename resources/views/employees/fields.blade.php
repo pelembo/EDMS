@@ -1,8 +1,3 @@
-<!-- Employee Code Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('employee_code', 'Employee Code:') !!}
-    {!! Form::text('employee_code', null, ['class' => 'form-control']) !!}
-</div>
 
 <!-- Last Name Field -->
 <div class="form-group col-sm-6">
