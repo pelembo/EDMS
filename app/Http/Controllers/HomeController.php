@@ -26,16 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $employee = Employee::all();
-        $employee_active = $employee->where('status', '=', 1)->count();
-        $employee_inactive = $employee->where('status', '=', 0)->count();
+        $employee_active = Employee::where('status', '=', 2)->count();
+        $employee_inactive = Employee::where('status', '=', 1)->count();
 
-        $workgroup = WorkGroup::all();
-        $workgroup_active = $workgroup->where('status', '=', 1)->count();
-        $workgroup_inactive = $workgroup->where('status', '=', 0)->count();
+        $workgroup_active = WorkGroup::where('status', '=', 2)->count();
+        $workgroup_inactive = WorkGroup::where('status', '=', 1)->count();
 
-        $document = Document::all();
-        $document_active = $document->count();
+        $document_active = Document::count();
 
         return view('home', compact(
             'employee_active',
